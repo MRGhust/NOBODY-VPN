@@ -2,6 +2,34 @@
 
 All notable changes to **NOBODY VPN** are documented here.
 
+## v0.6.1-beta — 2026-08-29
+
+### 🐞 Fixed
+- **VPN failed to start** — `core init failed: ... xray.xudp.basekey: invalid value (BaseKey must be
+  32 bytes)`. The XUDP base key passed to the core must be exactly 32 bytes (base64url-encoded);
+  the app now derives a stable key from the device `ANDROID_ID` (same approach as v2rayNG),
+  fixing `start error: core init failed` for every connection attempt.
+- **Language switching reverted to English** — the in-app locale is now owned by
+  `AppCompatDelegate` and persisted via `AppLocalesMetadataHolderService` (`autoStoreLocales`),
+  so choosing **فارسی** sticks immediately and survives app restarts / process death. The old
+  DataStore sync effect that could bounce the app back to English was removed.
+- **Could not return to HOME from the bottom menu** — tab navigation is now deterministic
+  (always collapses to the start destination first), and **selecting a server now returns you
+  to Home automatically**, matching standard VPN app UX.
+
+### ⚡ Size (about −54%)
+- Enabled R8 `minifyEnabled` + `shrinkResources` — the unminified dex (~56 MB, mostly
+  `material-icons-extended`) shrinks to ~4 MB.
+- Limited packaged locales to `en` / `fa` (strips ~40 library languages).
+
+| Build | v0.6.0-beta | v0.6.1-beta |
+|-------|------------:|------------:|
+| arm64-v8a | 99 MB | **45 MB** |
+| universal | 204 MB | **151 MB** |
+
+### 🧾 Technical
+- `versionCode` 3, `versionName` 0.6.1-beta
+
 ## v0.6.0-beta — 2026-08-29
 
 > Re-baselined the version line to a proper beta series for the open-source release.

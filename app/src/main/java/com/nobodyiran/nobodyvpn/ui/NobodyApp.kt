@@ -21,7 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.navigation.NavGraph.Companion.findStartDestination
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -41,6 +41,19 @@ object Routes {
     const val LOGS = "logs"
     const val PER_APP = "perapp"
     const val QR = "qr"
+}
+
+/**
+ * Deterministic tab navigation: always collapse the back stack to the start
+ * destination first, then show the requested tab. This guarantees the tap
+ * ALWAYS lands on the requested tab no matter what the current stack looks
+ * like (fixes "cannot return to HOME from the bottom menu").
+ */
+private fun NavHostController.goTab(route: String) {
+    navigate(route) {
+        popUpTo(graph.startDestinationId) { inclusive = false }
+        launchSingleTop = true
+    }
 }
 
 @Composable
@@ -68,37 +81,19 @@ fun NobodyApp() {
                 NavigationBar {
                     NavigationBarItem(
                         selected = currentRoute == Routes.HOME,
-                        onClick = {
-                            navController.navigate(Routes.HOME) {
-                                popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
-                        },
+                        onClick = { navController.goTab(Routes.HOME) },
                         icon = { Icon(Icons.Rounded.Home, contentDescription = null) },
                         label = { Text(stringResource(R.string.nav_home)) }
                     )
                     NavigationBarItem(
                         selected = currentRoute == Routes.SERVERS,
-                        onClick = {
-                            navController.navigate(Routes.SERVERS) {
-                                popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
-                        },
+                        onClick = { navController.goTab(Routes.SERVERS) },
                         icon = { Icon(Icons.Rounded.Dns, contentDescription = null) },
                         label = { Text(stringResource(R.string.nav_servers)) }
                     )
                     NavigationBarItem(
                         selected = currentRoute == Routes.SETTINGS,
-                        onClick = {
-                            navController.navigate(Routes.SETTINGS) {
-                                popUpTo(navController.graph.findStartDestination().id) { saveState = true }
-                                launchSingleTop = true
-                                restoreState = true
-                            }
-                        },
+                        onClick = { navController.goTab(Routes.SETTINGS) },
                         icon = { Icon(Icons.Outlined.Settings, contentDescription = null) },
                         label = { Text(stringResource(R.string.nav_settings)) }
                     )
@@ -117,12 +112,16 @@ fun NobodyApp() {
         ) {
             composable(Routes.HOME) {
                 HomeScreen(
-                    onOpenServers = { navController.navigate(Routes.SERVERS) },
+                    onOpenServers = { navController.goTab(Routes.SERVERS) },
                     onOpenLogs = { navController.navigate(Routes.LOGS) }
                 )
             }
             composable(Routes.SERVERS) {
-                ServersScreen(onScanQr = { navController.navigate(Routes.QR) })
+                ServersScreen(
+                    onScanQr = { navController.navigate(Routes.QR) },
+                    // Selecting a server from the list returns to Home (standard VPN UX)
+                    onSelected = { navController.goTab(Routes.HOME) }
+                )
             }
             composable(Routes.SETTINGS) {
                 SettingsScreen(

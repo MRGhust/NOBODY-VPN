@@ -93,7 +93,16 @@ fun SettingsScreen(onOpenPerApp: () -> Unit, onOpenLogs: () -> Unit) {
                         stringResource(R.string.lang_fa) to "fa",
                         stringResource(R.string.lang_en) to "en"
                     ),
-                    selected = settings.language,
+                    // AppCompatDelegate is the single source of truth for the in-app
+                    // language (it persists locales across process death via
+                    // autoStoreLocales). Reading it here keeps the UI consistent
+                    // and avoids the DataStore race that previously bounced the
+                    // app back to English.
+                    selected = when (AppCompatDelegate.getApplicationLocales().toLanguageTags()) {
+                        "fa" -> "fa"
+                        "en" -> "en"
+                        else -> ""
+                    },
                     display = {
                         when (it) {
                             "fa" -> stringResource(R.string.lang_fa)
@@ -102,7 +111,8 @@ fun SettingsScreen(onOpenPerApp: () -> Unit, onOpenLogs: () -> Unit) {
                         }
                     }
                 ) { v ->
-                    // Apply instantly, then persist (MainActivity also re-syncs from the store)
+                    // Apply instantly (triggers activity recreation with the new locale)
+                    // and mirror the choice into DataStore for informational purposes.
                     val locales = when (v) {
                         "fa" -> LocaleListCompat.forLanguageTags("fa")
                         "en" -> LocaleListCompat.forLanguageTags("en")

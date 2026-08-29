@@ -42,6 +42,17 @@
             </intent-filter>
         </activity>
 
+        <!-- Persists the in-app locale chosen via AppCompatDelegate.setApplicationLocales()
+             across process death (required for language switching to survive restarts). -->
+        <service
+            android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
+            android:enabled="false"
+            android:exported="false">
+            <meta-data
+                android:name="autoStoreLocales"
+                android:value="true" />
+        </service>
+
         <service
             android:name=".service.NobodyVpnService"
             android:exported="false"

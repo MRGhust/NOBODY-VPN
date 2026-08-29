@@ -89,7 +89,7 @@ import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Composable
-fun ServersScreen(onScanQr: () -> Unit) {
+fun ServersScreen(onScanQr: () -> Unit, onSelected: (() -> Unit)? = null) {
     val context = LocalContext.current
     val repo = Repo.get(context)
     val scope = rememberCoroutineScope()
@@ -328,6 +328,8 @@ fun ServersScreen(onScanQr: () -> Unit) {
                             scope.launch {
                                 repo.select(profile.id)
                                 UiBus.show(context.getString(R.string.select_server_toast))
+                                // Return to Home after choosing a server (standard VPN UX)
+                                onSelected?.invoke()
                             }
                         },
                         onTcpPing = {

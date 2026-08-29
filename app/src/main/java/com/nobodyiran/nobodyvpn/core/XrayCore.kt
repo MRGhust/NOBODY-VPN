@@ -53,13 +53,33 @@ object XrayCore {
                     }
                 }
                 Seq.setContext(appContext.applicationContext)
-                Libv2ray.initCoreEnv(filesDir.absolutePath, appContext.packageName)
+                Libv2ray.initCoreEnv(filesDir.absolutePath, xudpBaseKey(appContext))
                 appendLog("Xray core environment initialized")
                 initialized = true
             } catch (e: Exception) {
                 appendLog("init error: ${e.message}")
             }
         }
+    }
+
+    /**
+     * Xray core requires the XUDP base key to be exactly 32 bytes, base64url-encoded
+     * (see common/xudp in Xray-core: "BaseKey must be 32 bytes"). Passing the raw
+     * package name crashes core init with:
+     * "core init failed: ... xray.xudp.basekey: invalid value".
+     * We derive a stable 32-byte key from ANDROID_ID, exactly like v2rayNG does.
+     */
+    private fun xudpBaseKey(context: Context): String = try {
+        val androidId = android.provider.Settings.Secure.getString(
+            context.contentResolver, android.provider.Settings.Secure.ANDROID_ID
+        ) ?: "NobodyVPN-XUDP-BaseKey"
+        val raw = androidId.toByteArray(Charsets.UTF_8).copyOf(32) // pad/truncate to 32 bytes
+        android.util.Base64.encodeToString(
+            raw,
+            android.util.Base64.URL_SAFE or android.util.Base64.NO_PADDING or android.util.Base64.NO_WRAP
+        )
+    } catch (_: Exception) {
+        "" // empty -> the wrapper skips the env var and Xray generates a random key
     }
 
     private fun ensureController(): CoreController {

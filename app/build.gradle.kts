@@ -12,8 +12,8 @@ android {
         applicationId = "com.nobodyiran.nobodyvpn"
         minSdk = 29
         targetSdk = 37
-        versionCode = 2
-        versionName = "0.6.0-beta"
+        versionCode = 3
+        versionName = "0.6.1-beta"
 
         // Optional per-ABI build: ./gradlew assembleRelease -Pabi=arm64-v8a
         (project.findProperty("abi") as? String)?.let { abi ->
@@ -37,7 +37,10 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            // R8 shrinks the huge (unminified) dex of material-icons-extended & compose
+            // from ~56MB to a few MB — this is the main APK size reduction.
+            isMinifyEnabled = true
+            isShrinkResources = true
             if (file("nobodyvpn.keystore").exists()) {
                 signingConfig = signingConfigs.getByName("release")
             } // otherwise produce an unsigned APK (CI builds use assembleDebug)
@@ -46,6 +49,11 @@ android {
                 "proguard-rules.pro"
             )
         }
+    }
+
+    androidResources {
+        // Only ship the locales the app actually provides (strips ~40 library languages)
+        localeFilters += listOf("en", "fa")
     }
 
     // For per-ABI APKs enable splits:

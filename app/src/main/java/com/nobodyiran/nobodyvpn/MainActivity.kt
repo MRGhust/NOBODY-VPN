@@ -8,12 +8,9 @@ import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.LaunchedEffect
 import androidx.core.content.ContextCompat
-import androidx.core.os.LocaleListCompat
 import com.nobodyiran.nobodyvpn.data.Repo
 import com.nobodyiran.nobodyvpn.service.NobodyVpnService
 import com.nobodyiran.nobodyvpn.ui.NobodyApp
@@ -65,23 +62,11 @@ class MainActivity : AppCompatActivity() {
         setContent {
             val settings by repo.settings.collectAsState()
 
-            // Keep in-app language in sync with the persisted setting.
-            // (AppCompatDelegate persists locales itself; empty == follow system)
-            LaunchedEffect(settings.language) {
-                val target = when (settings.language) {
-                    "fa" -> "fa"
-                    "en" -> "en"
-                    else -> ""
-                }
-                val current = AppCompatDelegate.getApplicationLocales().toLanguageTags()
-                if (target.isEmpty()) {
-                    if (current.isNotEmpty()) {
-                        AppCompatDelegate.setApplicationLocales(LocaleListCompat.getEmptyLocaleList())
-                    }
-                } else if (current != target) {
-                    AppCompatDelegate.setApplicationLocales(LocaleListCompat.forLanguageTags(target))
-                }
-            }
+            // Language is owned by AppCompatDelegate (persisted via AppLocalesMetadataHolderService
+            // with autoStoreLocales in the manifest). Do NOT sync it from DataStore here: on every
+            // (re)creation the DataStore state may briefly be the default value and calling
+            // setApplicationLocales() from this effect would bounce the user back to English.
+            // The Settings screen applies locales directly on selection.
 
             NobodyTheme(themeMode = settings.themeMode, dynamicColors = settings.dynamicColors) {
                 NobodyApp()
