@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NOBODY VPN</string>
+    <string name="tile_label">NOBODY VPN</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">خانه</string>
+    <string name="nav_servers">سرورها</string>
+    <string name="nav_settings">تنظیمات</string>
+    <string name="nav_logs">لاگ هسته</string>
+    <string name="nav_per_app">تقسیم برنامه‌ها</string>
+
+    <!-- Connection state -->
+    <string name="status_disconnected">متصل نیستید</string>
+    <string name="status_connecting">در حال اتصال…</string>
+    <string name="status_connected">متصل شد</string>
+    <string name="status_stopping">در حال قطع…</string>
+    <string name="status_error">خطا در اتصال</string>
+    <string name="btn_connect">اتصال</string>
+    <string name="btn_disconnect">قطع اتصال</string>
+    <string name="tap_to_connect">برای اتصال ضربه بزنید</string>
+    <string name="elapsed_time">زمان اتصال</string>
+
+    <!-- Stats -->
+    <string name="speed_down">دانلود</string>
+    <string name="speed_up">آپلود</string>
+    <string name="session_traffic">حجم این جلسه</string>
+    <string name="total_traffic">حجم کل</string>
+
+    <!-- Servers -->
+    <string name="selected_server">سرور انتخاب‌شده</string>
+    <string name="no_server_selected">هنوز سروری انتخاب نشده</string>
+    <string name="select_server_hint">از تب سرورها یکی را انتخاب کنید</string>
+    <string name="servers_title">سرورها و کانفیگ‌ها</string>
+    <string name="search_hint">جستجوی نام یا آدرس…</string>
+    <string name="sort_by">مرتب‌سازی</string>
+    <string name="sort_default">پیش‌فرض</string>
+    <string name="sort_name">بر اساس نام</string>
+    <string name="sort_delay">بر اساس تأخیر</string>
+    <string name="test_all">تست همه</string>
+    <string name="tcp_ping">پینگ TCP</string>
+    <string name="real_ping">پینگ واقعی</string>
+    <string name="testing">در حال تست…</string>
+    <string name="ping_failed">ناموفق</string>
+    <string name="ping_ms">%1$d میلی‌ثانیه</string>
+    <string name="all_groups">همه</string>
+    <string name="manual_group">دستی</string>
+    <string name="empty_servers">لیست خالی است. کانفیگ اضافه کنید.</string>
+    <string name="select_server_toast">سرور انتخاب شد</string>
+
+    <!-- Import -->
+    <string name="import_clipboard">از کلیپ‌بورد</string>
+    <string name="import_qr_camera">اسکن QR</string>
+    <string name="import_qr_gallery">QR از گالری</string>
+    <string name="import_json_file">فایل کانفیگ JSON</string>
+    <string name="add_subscription">افزودن اشتراک</string>
+    <string name="add_manual">افزودن دستی</string>
+    <string name="import_result">%1$d کانفیگ اضافه شد</string>
+    <string name="invalid_link">لینک معتبر نیست</string>
+    <string name="clipboard_empty">کلیپ‌بورد خالی است</string>
+    <string name="camera_permission_needed">برای اسکن QR اجازه دوربین لازم است</string>
+
+    <!-- Subscription -->
+    <string name="sub_url">آدرس اشتراک</string>
+    <string name="sub_remark">نام اشتراک</string>
+    <string name="sub_last_update">آخرین به‌روزرسانی: %1$s</string>
+    <string name="never">هرگز</string>
+    <string name="refresh_now">به‌روزرسانی الان</string>
+    <string name="sub_updated">اشتراک به‌روز شد (%1$d کانفیگ)</string>
+    <string name="sub_update_failed">به‌روزرسانی اشتراک ناموفق بود</string>
+    <string name="subscriptions_title">اشتراک‌ها</string>
+    <string name="no_subscription">اشتراکی ثبت نشده</string>
+
+    <!-- Dialogs -->
+    <string name="delete">حذف</string>
+    <string name="cancel">لغو</string>
+    <string name="confirm">تأیید</string>
+    <string name="save">ذخیره</string>
+    <string name="edit">ویرایش</string>
+    <string name="share">اشتراک‌گذاری</string>
+    <string name="copy">کپی</string>
+    <string name="copied">کپی شد</string>
+    <string name="done">انجام شد</string>
+    <string name="show_qr">نمایش QR</string>
+    <string name="dialog_delete_title">حذف کانفیگ</string>
+    <string name="dialog_delete_msg">آیا از حذف «%1$s» مطمئن هستید؟</string>
+    <string name="dialog_edit_title">ویرایش کانفیگ</string>
+    <string name="edit_remark">نام</string>
+    <string name="edit_address">آدرس سرور</string>
+    <string name="edit_port">پورت</string>
+    <string name="manual_link_hint">لینک اشتراک‌گذاری (vless:// ، vmess:// و…)</string>
+    <string name="manual_add_title">افزودن کانفیگ</string>
+
+    <!-- Settings -->
+    <string name="settings_general">عمومی</string>
+    <string name="settings_vpn">شبکه و VPN</string>
+    <string name="settings_dns">DNS</string>
+    <string name="settings_routing">مسیریابی</string>
+    <string name="settings_subscription">اشتراک</string>
+    <string name="settings_logs">لاگ و عیب‌یابی</string>
+    <string name="settings_about">درباره</string>
+
+    <string name="theme_mode">حالت تم</string>
+    <string name="theme_system">هماهنگ با سیستم</string>
+    <string name="theme_light">روشن</string>
+    <string name="theme_dark">تیره</string>
+    <string name="dynamic_colors">رنگ‌های پویا</string>
+    <string name="dynamic_colors_summary">استفاده از رنگ‌های کاغذدیواری در اندروید ۱۲+</string>
+    <string name="language">زبان برنامه</string>
+    <string name="lang_system">سیستم</string>
+    <string name="lang_fa">فارسی</string>
+    <string name="lang_en">English</string>
+    <string name="auto_connect_boot">اتصال خودکار پس از بوت</string>
+
+    <string name="mtu">MTU</string>
+    <string name="vpn_dns_title">DNS رابط VPN</string>
+    <string name="vpn_dns_summary">آدرس‌های IP جداشده با کاما</string>
+    <string name="bypass_lan">دور زدن شبکه محلی</string>
+    <string name="ipv6_enabled">فعال‌سازی IPv6</string>
+
+    <string name="per_app_proxy">تقسیم برنامه‌ها</string>
+    <string name="per_app_summary">انتخاب برنامه‌های متصل یا مستثنا</string>
+    <string name="per_app_mode">حالت</string>
+    <string name="per_app_include">فقط برنامه‌های انتخابی</string>
+    <string name="per_app_exclude">همه به‌جز انتخابی‌ها</string>
+    <string name="per_app_search">جستجوی برنامه…</string>
+    <string name="per_app_show_system">نمایش برنامه‌های سیستمی</string>
+    <string name="per_app_selected_count">%1$d برنامه انتخاب شده</string>
+
+    <string name="dns_enable_custom">DNS سفارشی</string>
+    <string name="dns_enable_custom_summary">با غیرفعال بودن، DNS خودِ کانفیگ استفاده می‌شود</string>
+    <string name="remote_dns">DNS از راه دور</string>
+    <string name="dns_query_strategy">استراتژی کوئری</string>
+    <string name="dns_presets">پیش‌فرض‌ها</string>
+
+    <string name="routing_domain_strategy">استراتژی دامنه</string>
+    <string name="routing_preset">حالت مسیریابی</string>
+    <string name="preset_proxy_all">پروکسی همه‌چیز</string>
+    <string name="preset_bypass_ir">دور زدن سایت‌های ایرانی</string>
+    <string name="preset_custom">سفارشی</string>
+    <string name="block_ads">مسدود کردن تبلیغات</string>
+    <string name="block_udp">مسدود کردن UDP</string>
+    <string name="custom_rules">قوانین سفارشی</string>
+    <string name="custom_rules_summary">دامنه‌ها یا IPهای دستی برای مستقیم، پروکسی و مسدود</string>
+    <string name="rule_direct_domains">دامنه‌های مستقیم</string>
+    <string name="rule_proxy_domains">دامنه‌های پروکسی</string>
+    <string name="rule_block_domains">دامنه‌های مسدود</string>
+    <string name="rules_hint">هر خط یک دامنه یا IP، مثل example.com یا 1.2.3.4</string>
+
+    <string name="sub_auto_update">به‌روزرسانی خودکار</string>
+    <string name="sub_interval">فاصله به‌روزرسانی (دقیقه)</string>
+    <string name="sub_on_start">به‌روزرسانی هنگام اجرا</string>
+    <string name="sub_user_agent">User-Agent</string>
+
+    <string name="log_level">سطح لاگ</string>
+    <string name="log_title">لاگ هسته Xray</string>
+    <string name="log_empty">لاگی موجود نیست</string>
+    <string name="log_cleared">لاگ پاک شد</string>
+
+    <string name="about_version">نسخه برنامه</string>
+    <string name="about_core_version">نسخه هسته Xray</string>
+    <string name="footer_credit">ساخته شده توسط آناناس (NOBODYiran) به امید روزی که نیاز به چنین برنامه هایی نباشد.</string>
+
+    <!-- Notification -->
+    <string name="notif_channel_name">وضعیت VPN</string>
+    <string name="notif_connected_title">متصل</string>
+    <string name="notif_action_disconnect">قطع</string>
+    <string name="notif_action_reconnect">اتصال مجدد</string>
+
+    <!-- Errors -->
+    <string name="err_no_permission">مجوز VPN داده نشد</string>
+    <string name="err_no_config">اول یک سرور انتخاب کنید</string>
+    <string name="err_start_failed">شکست در اتصال: %1$s</string>
+    <string name="err_vpn_prepare">برای اتصال، اجازه VPN را تأیید کنید</string>
+
+    <!-- Misc -->
+    <string name="ok">باشه</string>
+    <string name="retry">تلاش مجدد</string>
+    <string name="misc_dismiss">بستن</string>
+</resources>

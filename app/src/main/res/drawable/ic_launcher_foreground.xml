@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Incognito hat dome -->
+    <path
+        android:fillColor="#F2FFFFFF"
+        android:pathData="M38,54 C38,39.5 44.5,31.5 54,31.5 C63.5,31.5 70,39.5 70,54 Z" />
+
+    <!-- Hat brim -->
+    <path
+        android:fillColor="#F2FFFFFF"
+        android:pathData="M31.5,54 h45 a4.5,4.5 0 0 1 4.5,4.5 a4.5,4.5 0 0 1 -4.5,4.5 h-45 a4.5,4.5 0 0 1 -4.5,-4.5 a4.5,4.5 0 0 1 4.5,-4.5 z" />
+
+    <!-- Glasses (neon green) -->
+    <path
+        android:pathData="M33,76.5 a7.5,7.5 0 1 0 15,0 a7.5,7.5 0 1 0 -15,0"
+        android:strokeColor="#22C55E"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M60,76.5 a7.5,7.5 0 1 0 15,0 a7.5,7.5 0 1 0 -15,0"
+        android:strokeColor="#22C55E"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M48,76.5 h12"
+        android:strokeColor="#22C55E"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+    <path
+        android:pathData="M33.4,73.5 L30.5,64.5 M74.6,73.5 L77.5,64.5"
+        android:strokeColor="#22C55E"
+        android:strokeWidth="4.2"
+        android:strokeLineCap="round"
+        android:fillColor="#00000000" />
+</vector>

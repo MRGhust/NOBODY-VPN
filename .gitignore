@@ -1,0 +1,26 @@
+# Built outputs
+build/
+app/build/
+*.apk
+*.aab
+
+# Gradle
+.gradle/
+local.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Signing material — never commit real keystores
+*.keystore
+*.jks
+!debug.keystore
+
+# Misc
+*.log
+.DS_Store

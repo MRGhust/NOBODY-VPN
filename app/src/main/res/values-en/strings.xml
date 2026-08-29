@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NOBODY VPN</string>
+    <string name="tile_label">NOBODY VPN</string>
+
+    <string name="nav_home">Home</string>
+    <string name="nav_servers">Servers</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_logs">Core Logs</string>
+    <string name="nav_per_app">Split Tunneling</string>
+
+    <string name="status_disconnected">Disconnected</string>
+    <string name="status_connecting">Connecting…</string>
+    <string name="status_connected">Connected</string>
+    <string name="status_stopping">Disconnecting…</string>
+    <string name="status_error">Connection error</string>
+    <string name="btn_connect">Connect</string>
+    <string name="btn_disconnect">Disconnect</string>
+    <string name="tap_to_connect">Tap to connect</string>
+    <string name="elapsed_time">Connected time</string>
+
+    <string name="speed_down">Down</string>
+    <string name="speed_up">Up</string>
+    <string name="session_traffic">Session traffic</string>
+    <string name="total_traffic">Total traffic</string>
+
+    <string name="selected_server">Selected server</string>
+    <string name="no_server_selected">No server selected yet</string>
+    <string name="select_server_hint">Pick one from the Servers tab</string>
+    <string name="servers_title">Servers &amp; Configs</string>
+    <string name="search_hint">Search name or address…</string>
+    <string name="sort_by">Sort by</string>
+    <string name="sort_default">Default</string>
+    <string name="sort_name">Name</string>
+    <string name="sort_delay">Delay</string>
+    <string name="test_all">Test all</string>
+    <string name="tcp_ping">TCP ping</string>
+    <string name="real_ping">Real ping</string>
+    <string name="testing">Testing…</string>
+    <string name="ping_failed">Failed</string>
+    <string name="ping_ms">%1$d ms</string>
+    <string name="all_groups">All</string>
+    <string name="manual_group">Manual</string>
+    <string name="empty_servers">The list is empty. Add a config.</string>
+    <string name="select_server_toast">Server selected</string>
+
+    <string name="import_clipboard">From clipboard</string>
+    <string name="import_qr_camera">Scan QR</string>
+    <string name="import_qr_gallery">QR from gallery</string>
+    <string name="import_json_file">JSON config file</string>
+    <string name="add_subscription">Add subscription</string>
+    <string name="add_manual">Add manually</string>
+    <string name="import_result">%1$d configs imported</string>
+    <string name="invalid_link">Invalid link</string>
+    <string name="clipboard_empty">Clipboard is empty</string>
+    <string name="camera_permission_needed">Camera permission is needed to scan QR</string>
+
+    <string name="sub_url">Subscription URL</string>
+    <string name="sub_remark">Subscription name</string>
+    <string name="sub_last_update">Last update: %1$s</string>
+    <string name="never">Never</string>
+    <string name="refresh_now">Refresh now</string>
+    <string name="sub_updated">Subscription updated (%1$d configs)</string>
+    <string name="sub_update_failed">Subscription update failed</string>
+    <string name="subscriptions_title">Subscriptions</string>
+    <string name="no_subscription">No subscriptions yet</string>
+
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="save">Save</string>
+    <string name="edit">Edit</string>
+    <string name="share">Share</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied</string>
+    <string name="done">Done</string>
+    <string name="show_qr">Show QR</string>
+    <string name="dialog_delete_title">Delete config</string>
+    <string name="dialog_delete_msg">Delete “%1$s”?</string>
+    <string name="dialog_edit_title">Edit config</string>
+    <string name="edit_remark">Name</string>
+    <string name="edit_address">Server address</string>
+    <string name="edit_port">Port</string>
+    <string name="manual_link_hint">Share link (vless:// , vmess:// …)</string>
+    <string name="manual_add_title">Add config</string>
+
+    <string name="settings_general">General</string>
+    <string name="settings_vpn">Network &amp; VPN</string>
+    <string name="settings_dns">DNS</string>
+    <string name="settings_routing">Routing</string>
+    <string name="settings_subscription">Subscription</string>
+    <string name="settings_logs">Logs &amp; Debug</string>
+    <string name="settings_about">About</string>
+
+    <string name="theme_mode">Theme mode</string>
+    <string name="theme_system">Follow system</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="dynamic_colors">Dynamic colors</string>
+    <string name="dynamic_colors_summary">Use wallpaper colors on Android 12+</string>
+    <string name="language">App language</string>
+    <string name="lang_system">System</string>
+    <string name="lang_fa">فارسی</string>
+    <string name="lang_en">English</string>
+    <string name="auto_connect_boot">Auto-connect after boot</string>
+
+    <string name="mtu">MTU</string>
+    <string name="vpn_dns_title">VPN interface DNS</string>
+    <string name="vpn_dns_summary">Comma separated IP addresses</string>
+    <string name="bypass_lan">Bypass LAN</string>
+    <string name="ipv6_enabled">Enable IPv6</string>
+
+    <string name="per_app_proxy">Split tunneling</string>
+    <string name="per_app_summary">Choose connected or excluded apps</string>
+    <string name="per_app_mode">Mode</string>
+    <string name="per_app_include">Only selected apps</string>
+    <string name="per_app_exclude">All except selected</string>
+    <string name="per_app_search">Search apps…</string>
+    <string name="per_app_show_system">Show system apps</string>
+    <string name="per_app_selected_count">%1$d apps selected</string>
+
+    <string name="dns_enable_custom">Custom DNS</string>
+    <string name="dns_enable_custom_summary">When disabled, the config’s own DNS is used</string>
+    <string name="remote_dns">Remote DNS</string>
+    <string name="dns_query_strategy">Query strategy</string>
+    <string name="dns_presets">Presets</string>
+
+    <string name="routing_domain_strategy">Domain strategy</string>
+    <string name="routing_preset">Routing preset</string>
+    <string name="preset_proxy_all">Proxy everything</string>
+    <string name="preset_bypass_ir">Bypass Iranian sites</string>
+    <string name="preset_custom">Custom</string>
+    <string name="block_ads">Block ads</string>
+    <string name="block_udp">Block UDP</string>
+    <string name="custom_rules">Custom rules</string>
+    <string name="custom_rules_summary">Manual domains/IPs for direct, proxy and blocked</string>
+    <string name="rule_direct_domains">Direct domains</string>
+    <string name="rule_proxy_domains">Proxy domains</string>
+    <string name="rule_block_domains">Blocked domains</string>
+    <string name="rules_hint">One domain or IP per line, e.g. example.com or 1.2.3.4</string>
+
+    <string name="sub_auto_update">Auto update</string>
+    <string name="sub_interval">Update interval (minutes)</string>
+    <string name="sub_on_start">Update on launch</string>
+    <string name="sub_user_agent">User-Agent</string>
+
+    <string name="log_level">Log level</string>
+    <string name="log_title">Xray core logs</string>
+    <string name="log_empty">No logs yet</string>
+    <string name="log_cleared">Logs cleared</string>
+
+    <string name="about_version">App version</string>
+    <string name="about_core_version">Xray core version</string>
+    <string name="footer_credit">Built by Pineapple (NOBODYiran), hoping for the day such tools are no longer needed.</string>
+
+    <string name="notif_channel_name">VPN status</string>
+    <string name="notif_connected_title">Connected</string>
+    <string name="notif_action_disconnect">Disconnect</string>
+    <string name="notif_action_reconnect">Reconnect</string>
+
+    <string name="err_no_permission">VPN permission was not granted</string>
+    <string name="err_no_config">Select a server first</string>
+    <string name="err_start_failed">Connection failed: %1$s</string>
+    <string name="err_vpn_prepare">Please confirm the VPN permission to connect</string>
+
+    <string name="ok">OK</string>
+    <string name="retry">Retry</string>
+    <string name="misc_dismiss">Dismiss</string>
+</resources>
